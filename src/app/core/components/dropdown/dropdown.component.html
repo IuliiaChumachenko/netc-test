@@ -1,0 +1,8 @@
+<button mat-button [matMenuTriggerFor]="menu">Select info</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item
+          *ngFor="let item of menuItems"
+          (click)="clickMenuItem(item)">
+    {{item}}
+  </button>
+</mat-menu>
