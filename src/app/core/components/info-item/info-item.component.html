@@ -1,1 +1,5 @@
-<div class="container">{{item}}</div>
+<div class="container">
+  <div *ngFor="let item of rowCol" class="info-item">
+    {{rowInfo[item]}}
+  </div>
+</div>

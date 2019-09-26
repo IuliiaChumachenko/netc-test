@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-info-panel',
@@ -6,8 +6,17 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   styleUrls: ['./info-panel.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InfoPanelComponent {
+export class InfoPanelComponent implements OnChanges {
+  public infoGroupKeys: string[];
 
   @Input() public infoItems: string[];
+
+  public ngOnChanges({ infoItems }: SimpleChanges): void {
+    const groupedInfoItems = infoItems;
+
+    if (groupedInfoItems && groupedInfoItems.currentValue) {
+      this.infoGroupKeys = Object.keys(this.infoItems);
+    }
+  }
 
 }

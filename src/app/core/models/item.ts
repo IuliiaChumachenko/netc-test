@@ -1,6 +1,10 @@
+export interface InfoItems {
+  [key: string]: Item[];
+}
+
 export interface Item {
-  author: string;
+  author?: string;
   series?: string;
-  name: string;
-  date: string;
+  name?: string;
+  date?: string;
 }

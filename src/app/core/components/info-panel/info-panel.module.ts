@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfoPanelComponent } from './info-panel.component';
-import { InfoItemModule } from '../info-item/info-item.module';
+import { InfoGroupModule } from '../info-group/info-group.module';
 
 @NgModule({
   declarations: [InfoPanelComponent],
   imports: [
     CommonModule,
-    InfoItemModule,
+    InfoGroupModule,
   ],
   exports: [InfoPanelComponent],
 })

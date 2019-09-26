@@ -1,3 +1,7 @@
 <div class="container">
-  <app-info-item *ngFor="let item of infoItems" [item]="item"></app-info-item>
+  <app-info-group
+    *ngFor="let item of infoGroupKeys"
+    [groupKey]="item"
+    [groupInfoItems]="infoItems[item]">
+  </app-info-group>
 </div>
